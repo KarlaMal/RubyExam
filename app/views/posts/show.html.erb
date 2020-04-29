@@ -1,0 +1,21 @@
+<p><a href='/posts'>Homepage</a> 
+    <a href='/logout'>Logout</a>
+</p>
+
+<h3>Post:</h3>
+<p><%=@post.user.alias%> says: <%= @post.content %></p>
+
+<h3>People who liked this post: </h3>
+<table>
+    <tr> 
+        <th>Alias</th>
+        <th>Name</th>
+    </tr>
+    <% @users.each do |u| %>
+        <tr> 
+            <td><a href='/users/<%= u.id %>'><%= u.alias %></a> </td> 
+            <td><%= u.name %> </td>
+        </tr>
+    <% end %>
+</table>
+
