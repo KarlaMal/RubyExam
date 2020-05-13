@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     else
       @user = User.find(session[:userid])
+      #can have access in our views with the name @user
     end
   end
 
